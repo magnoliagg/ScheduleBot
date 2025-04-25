@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScheduleBot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ScheduleBot</h1>
+        <p>Manage your daily schedules easily</p>
+
+        <div class="add-schedule">
+            <h2>Add New Schedule</h2>
+            <form id="scheduleForm">
+                <input type="text" id="title" placeholder="Event Title" required>
+                <textarea id="description" placeholder="Description (optional)"></textarea>
+                <input type="date" id="date" required>
+                <input type="time" id="time" required>
+                <button type="submit">Add Schedule</button>
+            </form>
+        </div>
+
+        <div class="schedule-list">
+            <h2>Your Schedules</h2>
+            <div id="schedules"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

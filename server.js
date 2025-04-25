@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.send('ScheduleBot is running!');
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Get all schedules
