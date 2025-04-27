@@ -80,6 +80,13 @@ button:hover {
     margin-top: 10px;
 }
 
+.schedule-created {
+    color: #999;
+    font-size: 12px;
+    margin-top: 8px;
+    font-style: italic;
+}
+
 .delete-btn {
     background-color: #dc3545;
     color: white;

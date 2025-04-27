@@ -48,11 +48,13 @@ document.addEventListener('DOMContentLoaded', function() {
             schedules.forEach(schedule => {
                 const scheduleDiv = document.createElement('div');
                 scheduleDiv.className = 'schedule-item';
+                const createdDate = new Date(schedule.created_at).toLocaleDateString();
                 scheduleDiv.innerHTML = `
                     <button class="delete-btn" onclick="deleteSchedule(${schedule.id})">Delete</button>
                     <div class="schedule-title">${schedule.title}</div>
                     <div class="schedule-time">${schedule.date} at ${schedule.time}</div>
                     ${schedule.description ? `<div class="schedule-description">${schedule.description}</div>` : ''}
+                    <div class="schedule-created">Created: ${createdDate}</div>
                 `;
                 schedulesDiv.appendChild(scheduleDiv);
             });
