@@ -33,12 +33,16 @@ app.post('/api/schedules', (req, res) => {
         return res.status(400).json({ error: 'Title, date, and time are required' });
     }
 
+    if (title.trim().length === 0) {
+        return res.status(400).json({ error: 'Title cannot be empty' });
+    }
+
     db.run('INSERT INTO schedules (title, description, date, time) VALUES (?, ?, ?, ?)',
-        [title, description, date, time], function(err) {
+        [title.trim(), description ? description.trim() : '', date, time], function(err) {
             if (err) {
                 res.status(500).json({ error: err.message });
             } else {
-                res.json({ id: this.lastID, title, description, date, time });
+                res.json({ id: this.lastID, title: title.trim(), description: description ? description.trim() : '', date, time });
             }
         });
 });
